@@ -1,6 +1,6 @@
 {
-  "name": "NexasFour Terminal",
-  "short_name": "NexasFour",
+  "name": "ZenikBinary Terminal",
+  "short_name": "ZenikBinary",
   "description": "Trade synthetic indices from your phone.",
   "start_url": "index.html",
   "scope": ".",

@@ -1,5 +1,5 @@
 /* ============================================================
-   NexasFour, network layer
+   ZenikBinary, network layer
 
    Everything that talks to the server goes through here. When no API is
    configured, `NexNet.live` is false and callers fall back to the local
@@ -160,7 +160,7 @@
           console.error('[nexas] the API answered with an error. If it is hosted ' +
             'on an instance that sleeps, it may still be waking up.');
         } catch (e2) {}
-        throw ApiError('NexasFour is having trouble right now. Nothing was charged, ' +
+        throw ApiError('ZenikBinary is having trouble right now. Nothing was charged, ' +
           'give it a moment and try again.', 'server');
       }
 
@@ -173,7 +173,7 @@
             'instance looks exactly like a blocked origin. Check the service is ' +
             'up first, then the allow-list.');
         } catch (e3) {}
-        throw ApiError('NexasFour could not be reached just now. Nothing was charged, ' +
+        throw ApiError('ZenikBinary could not be reached just now. Nothing was charged, ' +
           'give it a moment and try again.', 'unreachable');
       }
 
@@ -182,7 +182,7 @@
         throw ApiError('That request did not get through. Please try again.', 'flaky');
       }
 
-      throw ApiError('Could not reach NexasFour. Check your connection.', 'offline');
+      throw ApiError('Could not reach ZenikBinary. Check your connection.', 'offline');
     }
 
     /* A 5xx on a read is usually an instance still waking. Retry once, but only a GET. A POST that opens a payment is never retried
@@ -388,7 +388,7 @@
           : raw === 'server_error'
             ? 'The sign-in service had a problem. Try again in a moment.'
           : raw;
-        try { console.error('[nexasfour] sign-in failed: ' + raw); } catch (e) {}
+        try { console.error('[zenikbinary] sign-in failed: ' + raw); } catch (e) {}
         return { ok: false, message: friendly };
       }
 
